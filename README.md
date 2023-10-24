@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+It's intended to act as personal learning from Scrimba's Learn React tutorial.
+
 ## Getting Started
 
 First, run the development server:
