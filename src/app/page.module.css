@@ -45,3 +45,72 @@
   width: 320px;
   font-weight: 200;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card > p {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.card_inventoryStatus {
+  position: relative;
+  display: inline-block;
+  top: 25px;
+  left: 3px;
+  font-size: 0.7em;
+  text-align: center;
+  vertical-align: text-top;
+  overflow: visible;
+  background-color: #FFFFFF;
+  line-height: 20px;
+  height: 20px;
+  width: 60px;
+}
+
+.card_packageImage {
+  height: 235px;
+  width: 175px;
+}
+
+.card_title {
+  color: #222;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 110%; /* 13.2px */
+}
+
+.card_price {
+  color: #222;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 110%; /* 13.2px */
+}
+
+.rating {
+  color: #918E9B;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 110%; /* 13.2px */
+
+  margin-top: 9px;
+}
+
+.rating_number {
+  color: #222;
+}
+
+.rating_star {
+  display: inline;
+
+  width: 14px;
+  height: 12px;
+
+  margin: 1px;
+  /*vertical-align: middle;*/
+}
