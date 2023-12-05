@@ -2,6 +2,7 @@ import Image, {StaticImageData} from "next/image";
 import styles from "@/app/page.module.css";
 import star from "@/images/star.svg";
 
+type InventoryStatus = 'SOLD OUT' | 'ONLINE';
 
 export interface CardProps {
     title: string,
@@ -10,7 +11,7 @@ export interface CardProps {
     country: string,
     priceInUsd: string,
     units: string,
-    inventoryStatus: string,
+    inventoryStatus: InventoryStatus,
     image: StaticImageData
     alt?: string,
 }
