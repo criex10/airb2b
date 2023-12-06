@@ -9,14 +9,18 @@ type InventoryStatus = 'SOLD OUT' | 'ONLINE';
 export interface CardProps {
     id: number,
     title: string,
-    rating: number,
-    numRatings: number,
+    rating: {
+        ratingNumber: number,
+        numRatings: number,
+    }
     country: string,
     priceInUsd: string,
     units: string,
     inventoryStatus?: InventoryStatus,
-    image: StaticImageData,
-    alt?: string,
+    image: {
+        source: StaticImageData,
+        alt?: string
+    }
 }
 
 function createInventoryStatus(inventoryStatus?: InventoryStatus) {
@@ -28,8 +32,8 @@ export default function Card(props: CardProps) {
     return (
         <div className={styles.card}>
             <div className={styles.card_packageImageContainer}>
-                <Image src={props.image}
-                       alt={'Package advertising image'}
+                <Image src={props.image.source}
+                       alt={props.image.alt || ""}
                        width={175}
                        height={235}
                        className={styles.card_packageImage} />
@@ -38,9 +42,9 @@ export default function Card(props: CardProps) {
 
             <span className={styles.rating}>
                 <Image src={star} alt={'Star'} className={styles.rating_star}/>
-                <span className={styles.rating_number}> {props.rating.toFixed(1)} </span>
+                <span className={styles.rating_number}> {props.rating.ratingNumber.toFixed(1)} </span>
                 {
-                    `(${props.numRatings}) 
+                    `(${props.rating.numRatings}) 
                     \u2022
                     ${props.country}`
                 }

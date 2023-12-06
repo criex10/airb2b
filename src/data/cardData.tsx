@@ -7,35 +7,48 @@ const CardData: CardProps[] = [
     {
         id: 1,
         title: `Life lessons with Katie Zaferes`,
-        rating: 5,
-        numRatings: 5,
+        rating: {
+            ratingNumber: 5,
+            numRatings: 5,
+        },
         country: 'USA',
         priceInUsd: '136',
         units: 'person',
         inventoryStatus: 'SOLD OUT',
-        image: katieZaferes,
-        alt: "Katie Zaferes, life coach",
+        image: {
+            source: katieZaferes,
+            alt: "Katie Zaferes, life coach",
+        }
     },
     {
         id: 2,
         title: 'Learn wedding photography',
-        rating: 5.0,
-        numRatings: 30,
+        rating: {
+            ratingNumber: 5.0,
+            numRatings: 30
+        },
         country: 'USA',
         priceInUsd: '125',
         units: 'person',
         inventoryStatus: 'ONLINE',
-        image: wedding,
+        image: {
+            source: wedding,
+            alt: 'Bride waiting at a church'
+        }
     },
     {
         id: 3,
         title: 'Group Mountain Biking',
-        rating: 4.8,
-        numRatings: 2,
+        rating: {
+            ratingNumber: 4.8,
+            numRatings: 2,
+        },
         country: 'USA',
         priceInUsd: '50',
         units: 'person',
-        image: bicycle,
+        image: {
+            source: bicycle,
+        }
     },
 ];
 export default CardData;
