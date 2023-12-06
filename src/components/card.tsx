@@ -1,3 +1,5 @@
+import React from "react";
+
 import Image, {StaticImageData} from "next/image";
 import styles from "@/app/page.module.css";
 import star from "@/images/star.svg";
@@ -11,17 +13,27 @@ export interface CardProps {
     country: string,
     priceInUsd: string,
     units: string,
-    inventoryStatus: InventoryStatus,
+    inventoryStatus?: InventoryStatus,
     image: StaticImageData
     alt?: string,
+}
+
+function createInventoryStatus(inventoryStatus?: InventoryStatus) {
+    if (!!inventoryStatus) {
+        return (<div className={styles.card_inventoryStatus}>{inventoryStatus}</div>)
+    }
 }
 export default function Card(props: CardProps) {
     return (
         <div className={styles.card}>
-            <div className={styles.card_inventoryStatus}>{props.inventoryStatus}</div>
-            <Image src={props.image}
-                   alt={'Package image'}
-                   className={styles.card_packageImage} />
+            <div className={styles.card_packageImageContainer}>
+                <Image src={props.image}
+                       alt={'Package advertising image'}
+                       width={175}
+                       height={235}
+                       className={styles.card_packageImage} />
+                {createInventoryStatus(props.inventoryStatus)}
+            </div>
 
             <span className={styles.rating}>
                 <Image src={star} alt={'Star'} className={styles.rating_star}/>

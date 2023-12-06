@@ -30,7 +30,7 @@
 }
 
 .hero {
-  padding: 36px;
+  padding: 0 36px;
 }
 
 .hero > img {
@@ -47,8 +47,11 @@
 }
 
 .card {
-  display: flex;
+  display:flex;
   flex-direction: column;
+
+  width: 175px;
+  margin: 0 9px 0 9px;
 }
 
 .card > p {
@@ -57,9 +60,9 @@
 }
 
 .card_inventoryStatus {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  top: 25px;
+  top: 5px;
   left: 3px;
   font-size: 0.7em;
   text-align: center;
@@ -72,8 +75,14 @@
 }
 
 .card_packageImage {
-  height: 235px;
-  width: 175px;
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+  z-index: -1;
+}
+
+.card_packageImageContainer {
+  position: relative;
 }
 
 .card_title {
@@ -112,5 +121,25 @@
   height: 12px;
 
   margin: 1px;
-  /*vertical-align: middle;*/
+}
+
+.carousel {
+  display: flex;
+  justify-content: left;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 515px;
+
+  padding: 0 36px;
+
+  margin-top: 20px;
+}
+
+.carousel > .card {
+  flex-shrink: 0;
+}
+
+.carousel > .card:first-child {
+  margin-left: 0;
 }
