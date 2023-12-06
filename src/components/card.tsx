@@ -7,6 +7,7 @@ import star from "@/images/star.svg";
 type InventoryStatus = 'SOLD OUT' | 'ONLINE';
 
 export interface CardProps {
+    id: number,
     title: string,
     rating: number,
     numRatings: number,
@@ -14,7 +15,7 @@ export interface CardProps {
     priceInUsd: string,
     units: string,
     inventoryStatus?: InventoryStatus,
-    image: StaticImageData
+    image: StaticImageData,
     alt?: string,
 }
 
